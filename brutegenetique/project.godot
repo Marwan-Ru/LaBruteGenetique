@@ -13,3 +13,12 @@ config_version=5
 config/name="BruteGenetique"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+
+[gui]
+
+theme/custom="res://Theme/theme.tres"
