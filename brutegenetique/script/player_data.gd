@@ -20,10 +20,6 @@ var block_attack : float
 func _init() -> void:
 	_rnd = RandomNumberGenerator.new()
 	randomize_parameter()
-	
-func _process(delta: float) -> void:
-	if Input.is_action_just_released("RND"):
-		randomize_parameter()
 
 func distribution(min, pool, size, fn) -> Array:
 	var dist   = range(size).map(func(n): return fn.call(min, pool))
