@@ -22,3 +22,4 @@ window/size/viewport_height=1080
 [gui]
 
 theme/custom="res://Theme/theme.tres"
+theme/custom_font="res://font/monogram/ttf/monogram.ttf"
