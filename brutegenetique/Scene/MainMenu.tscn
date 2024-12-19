@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://b0k7asq8rpa4q"]
+[gd_scene load_steps=4 format=3 uid="uid://b0k7asq8rpa4q"]
 
 [ext_resource type="LabelSettings" uid="uid://5b82xxmjfb0y" path="res://LabelSettings/Title.tres" id="1_hemmn"]
+[ext_resource type="Script" path="res://script/main_menu.gd" id="1_lp85v"]
 [ext_resource type="Theme" uid="uid://cpdl345r6nyi2" path="res://Theme/theme.tres" id="1_x8j3s"]
 
 [node name="MainMenu" type="Control"]
@@ -10,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_lp85v")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 texture_filter = 1
@@ -85,3 +87,6 @@ size_flags_vertical = 3
 [node name="Control6" type="Control" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/Button" to="." method="_on_button_play_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer2/Button" to="." method="_on_button_quit_pressed"]
