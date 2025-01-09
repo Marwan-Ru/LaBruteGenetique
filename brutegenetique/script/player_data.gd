@@ -1,5 +1,3 @@
-extends Node
-
 class_name PlayerData
 
 static var points_pool = 100
