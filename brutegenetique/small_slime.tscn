@@ -42,4 +42,5 @@ animations = [{
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_h3hbq")
 animation = &"idle"
-frame_progress = 0.970088
+frame = 1
+frame_progress = 0.292643

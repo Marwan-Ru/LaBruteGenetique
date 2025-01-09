@@ -423,5 +423,5 @@ animations = [{
 texture_filter = 1
 position = Vector2(-1, -1)
 sprite_frames = SubResource("SpriteFrames_1i341")
-animation = &"run_left"
-frame_progress = 0.694423
+animation = &"run_right"
+frame_progress = 0.612299
