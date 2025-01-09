@@ -52,7 +52,7 @@ size_flags_horizontal = 3
 [node name="Button" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Play"
+text = "Jouer"
 
 [node name="Control2" type="Control" parent="PanelContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -73,7 +73,7 @@ size_flags_horizontal = 3
 [node name="Button" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Quit
+text = "Quitter
 "
 
 [node name="Control2" type="Control" parent="PanelContainer/VBoxContainer/HBoxContainer2"]
