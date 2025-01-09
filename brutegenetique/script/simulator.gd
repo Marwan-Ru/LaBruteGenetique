@@ -24,7 +24,7 @@ func _ready() -> void:
 	#First generation
 	for i in range(populationSize):
 		var player : Player = Player.new()
-		player.data = PlayerData.new()
+		player.data = PlayerData.from_random(100)
 		player.data.randomize_parameter()
 		playerArray.append(player)
 
