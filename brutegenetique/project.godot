@@ -12,6 +12,7 @@ config_version=5
 
 config/name="BruteGenetique"
 config/features=PackedStringArray("4.3", "Forward Plus")
+boot_splash/bg_color=Color(0, 0, 0, 1)
 config/icon="res://icon.svg"
 
 [display]
@@ -25,3 +26,7 @@ window/stretch/aspect="expand"
 
 theme/custom="res://Theme/theme.tres"
 theme/custom_font="res://font/monogram/ttf/monogram.ttf"
+
+[rendering]
+
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)

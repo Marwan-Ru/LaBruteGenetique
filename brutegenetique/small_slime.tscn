@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://u8ihuto8alf2"]
+[gd_scene load_steps=7 format=3 uid="uid://u8ihuto8alf2"]
 
 [ext_resource type="Texture2D" uid="uid://bk8lx456e6dt3" path="res://Sprites/slimezPack.png" id="1_bm7fo"]
+[ext_resource type="Script" path="res://small_slime_animation.gd" id="1_ubpmp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2c8bf"]
 atlas = ExtResource("1_bm7fo")
@@ -37,9 +38,10 @@ animations = [{
 }]
 
 [node name="Node2D" type="CharacterBody2D"]
+script = ExtResource("1_ubpmp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_h3hbq")
-animation = &"idle"
-frame_progress = 0.970088
+animation = &"hurt"
+flip_h = true
