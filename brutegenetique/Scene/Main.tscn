@@ -164,47 +164,47 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/VBoxContainer"]
 layout_mode = 2
-text = "health : X"
+text = "Vie : X"
 label_settings = ExtResource("5_ft5t2")
 
 [node name="Label2" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/VBoxContainer"]
 layout_mode = 2
-text = "damage : X"
+text = "Degats : X"
 label_settings = ExtResource("5_ft5t2")
 
 [node name="Label3" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/VBoxContainer"]
 layout_mode = 2
-text = "magic : X"
+text = "Magie : X"
 label_settings = ExtResource("5_ft5t2")
 
 [node name="Label4" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/VBoxContainer"]
 layout_mode = 2
-text = "heal : X"
+text = "Soin : X"
 label_settings = ExtResource("5_ft5t2")
 
 [node name="Label5" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/VBoxContainer"]
 layout_mode = 2
-text = "speed : X"
+text = "Vitesse : X"
 label_settings = ExtResource("5_ft5t2")
 
 [node name="Label6" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/VBoxContainer"]
 layout_mode = 2
-text = "damage attack : X"
+text = "Probabilite degats : X"
 label_settings = ExtResource("5_ft5t2")
 
 [node name="Label7" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/VBoxContainer"]
 layout_mode = 2
-text = "magic attack : X"
+text = "Probabilite magie : X"
 label_settings = ExtResource("5_ft5t2")
 
 [node name="Label8" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/VBoxContainer"]
 layout_mode = 2
-text = "perform heal : X"
+text = "Probabilite vie : X"
 label_settings = ExtResource("5_ft5t2")
 
 [node name="Label9" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/VBoxContainer"]
 layout_mode = 2
-text = "block attack : X"
+text = "Probabilite Blocage : X"
 label_settings = ExtResource("5_ft5t2")
 
 [node name="Control4" type="Control" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2"]
