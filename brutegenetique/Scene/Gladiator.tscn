@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://bijxn6k6s021l"]
+[gd_scene load_steps=52 format=3 uid="uid://4hnotvwirefq"]
 
 [ext_resource type="Script" path="res://script/gladiator_animation.gd" id="1_me4n5"]
 [ext_resource type="Texture2D" uid="uid://c8upjoc00xs2y" path="res://Sprites/Gladiator/Attack_SpriteSheet.png" id="1_mm8qj"]

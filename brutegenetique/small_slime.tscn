@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://bbb5kgj0aipg0"]
+
+[ext_resource type="Texture2D" uid="uid://bk8lx456e6dt3" path="res://Sprites/slimezPack.png" id="1_bm7fo"]
+[ext_resource type="Script" path="res://script/small_slime_animation.gd" id="1_hf5ho"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2c8bf"]
+atlas = ExtResource("1_bm7fo")
+region = Rect2(80, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_643ok"]
+atlas = ExtResource("1_bm7fo")
+region = Rect2(32, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yt37l"]
+atlas = ExtResource("1_bm7fo")
+region = Rect2(48, 64, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h3hbq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2c8bf")
+}],
+"loop": true,
+"name": &"hurt",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_643ok")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yt37l")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}]
+
+[node name="Node2D2" type="CharacterBody2D"]
+script = ExtResource("1_hf5ho")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_h3hbq")
+animation = &"idle"
+frame = 1
+frame_progress = 0.292643
+flip_h = true
