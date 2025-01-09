@@ -2,8 +2,6 @@ class_name PlayerData
 
 static var points_pool = 100
 
-var _rnd: RandomNumberGenerator
-
 var damage: int
 var magic : int
 var heal  : int
@@ -16,7 +14,6 @@ var perform_heal : float
 var block_attack : float
 
 func _init() -> void:
-	_rnd = RandomNumberGenerator.new()
 	randomize_parameter()
 
 func distribution(min, pool, size, fn) -> Array:
@@ -25,13 +22,13 @@ func distribution(min, pool, size, fn) -> Array:
 	return dist.map(func(n): return n * factor as float) 
 
 func real_distribution(pool, size):
-	return distribution(0, pool, size, _rnd.randf_range)
+	return distribution(0, pool, size, randf_range)
 
 func int_distribution(min, pool, size):
-	var dist = distribution(min, pool, size, _rnd.randi_range).map(func(n): return ceili(n))
+	var dist = distribution(min, pool, size, randi_range).map(func(n): return ceili(n))
 	var diff = pool - dist.reduce(func(acc, n): return acc + n, 0)
 	while true:
-		var idx = _rnd.randi_range(0, dist.size() - 1)
+		var idx = randi_range(0, dist.size() - 1)
 		if (dist[idx] + diff >= min):
 			dist[idx] += diff
 			break
