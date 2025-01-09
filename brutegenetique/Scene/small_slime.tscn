@@ -1,17 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://u8ihuto8alf2"]
+[gd_scene load_steps=7 format=3 uid="uid://u8ihuto8alf2"]
 
-[ext_resource type="Texture2D" uid="uid://bk8lx456e6dt3" path="res://Sprites/slimezPack.png" id="1_bm7fo"]
+[ext_resource type="Script" path="res://script/small_slime_animation.gd" id="1_5naa2"]
+[ext_resource type="Texture2D" uid="uid://bk8lx456e6dt3" path="res://Sprites/slimezPack.png" id="2_3fwpy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2c8bf"]
-atlas = ExtResource("1_bm7fo")
+atlas = ExtResource("2_3fwpy")
 region = Rect2(80, 64, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_643ok"]
-atlas = ExtResource("1_bm7fo")
+atlas = ExtResource("2_3fwpy")
 region = Rect2(32, 64, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yt37l"]
-atlas = ExtResource("1_bm7fo")
+atlas = ExtResource("2_3fwpy")
 region = Rect2(48, 64, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_h3hbq"]
@@ -37,10 +38,10 @@ animations = [{
 }]
 
 [node name="Node2D" type="CharacterBody2D"]
+script = ExtResource("1_5naa2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_h3hbq")
-animation = &"idle"
-frame = 1
-frame_progress = 0.292643
+animation = &"hurt"
+flip_h = true
