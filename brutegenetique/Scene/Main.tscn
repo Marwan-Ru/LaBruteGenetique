@@ -4,9 +4,7 @@
 [ext_resource type="Theme" uid="uid://cpdl345r6nyi2" path="res://Theme/theme.tres" id="1_300jh"]
 [ext_resource type="PackedScene" uid="uid://u8ihuto8alf2" path="res://Scene/small_slime.tscn" id="2_gn5bg"]
 [ext_resource type="LabelSettings" uid="uid://h88cm3ieho0e" path="res://LabelSettings/game_label.tres" id="2_nv6xh"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_pdrjl"]
-font_size = 32
+[ext_resource type="LabelSettings" uid="uid://cdjpyiowjnjur" path="res://LabelSettings/stat.tres" id="5_ft5t2"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -167,47 +165,47 @@ layout_mode = 2
 [node name="Label" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/VBoxContainer"]
 layout_mode = 2
 text = "health : X"
-label_settings = SubResource("LabelSettings_pdrjl")
+label_settings = ExtResource("5_ft5t2")
 
 [node name="Label2" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/VBoxContainer"]
 layout_mode = 2
 text = "damage : X"
-label_settings = SubResource("LabelSettings_pdrjl")
+label_settings = ExtResource("5_ft5t2")
 
 [node name="Label3" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/VBoxContainer"]
 layout_mode = 2
 text = "magic : X"
-label_settings = SubResource("LabelSettings_pdrjl")
+label_settings = ExtResource("5_ft5t2")
 
 [node name="Label4" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/VBoxContainer"]
 layout_mode = 2
 text = "heal : X"
-label_settings = SubResource("LabelSettings_pdrjl")
+label_settings = ExtResource("5_ft5t2")
 
 [node name="Label5" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/VBoxContainer"]
 layout_mode = 2
 text = "speed : X"
-label_settings = SubResource("LabelSettings_pdrjl")
+label_settings = ExtResource("5_ft5t2")
 
 [node name="Label6" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/VBoxContainer"]
 layout_mode = 2
 text = "damage attack : X"
-label_settings = SubResource("LabelSettings_pdrjl")
+label_settings = ExtResource("5_ft5t2")
 
 [node name="Label7" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/VBoxContainer"]
 layout_mode = 2
 text = "magic attack : X"
-label_settings = SubResource("LabelSettings_pdrjl")
+label_settings = ExtResource("5_ft5t2")
 
 [node name="Label8" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/VBoxContainer"]
 layout_mode = 2
 text = "perform heal : X"
-label_settings = SubResource("LabelSettings_pdrjl")
+label_settings = ExtResource("5_ft5t2")
 
 [node name="Label9" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/VBoxContainer"]
 layout_mode = 2
 text = "block attack : X"
-label_settings = SubResource("LabelSettings_pdrjl")
+label_settings = ExtResource("5_ft5t2")
 
 [node name="Control4" type="Control" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
