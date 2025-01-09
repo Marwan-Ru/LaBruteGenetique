@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bijxn6k6s021l" path="res://Scene/Gladiator.tscn" id="1_4ijo2"]
 [ext_resource type="Theme" uid="uid://cpdl345r6nyi2" path="res://Theme/theme.tres" id="1_300jh"]
-[ext_resource type="PackedScene" uid="uid://u8ihuto8alf2" path="res://small_slime.tscn" id="2_gn5bg"]
+[ext_resource type="PackedScene" uid="uid://u8ihuto8alf2" path="res://Scene/small_slime.tscn" id="2_gn5bg"]
 [ext_resource type="LabelSettings" uid="uid://h88cm3ieho0e" path="res://LabelSettings/game_label.tres" id="2_nv6xh"]
 
 [node name="Main" type="Control"]
