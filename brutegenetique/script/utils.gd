@@ -13,9 +13,13 @@ static func int_distribution(min: int, pool: int, size: int) -> Array:
 	
 static func normalize_distribution(dist: Array, pool) -> Array:
 	var factor = pool as float / dist.reduce(func(acc, n): return acc + n, 0) as float
-	return dist.map(func(n): return n * factor as float)
+	return dist.map(func(n): return n as float * factor as float)
 	
 static func fix_int_distribution(dist: Array, pool, min):
+	for i in range(dist.size()):
+		if dist[i] < min:
+			dist[i] = min
+	
 	var diff = pool - dist.reduce(func(acc, n): return acc + n, 0)
 	while true:
 		var idx = randi_range(0, dist.size() - 1)
