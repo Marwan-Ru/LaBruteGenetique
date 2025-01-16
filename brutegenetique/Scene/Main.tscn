@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bvgwfljstxcns"]
 
-[ext_resource type="PackedScene" uid="uid://bijxn6k6s021l" path="res://Scene/Gladiator.tscn" id="1_4ijo2"]
+[ext_resource type="PackedScene" uid="uid://4hnotvwirefq" path="res://Scene/Gladiator.tscn" id="1_4ijo2"]
 [ext_resource type="Theme" uid="uid://cpdl345r6nyi2" path="res://Theme/theme.tres" id="1_300jh"]
 [ext_resource type="PackedScene" uid="uid://u8ihuto8alf2" path="res://Scene/small_slime.tscn" id="2_gn5bg"]
 [ext_resource type="LabelSettings" uid="uid://h88cm3ieho0e" path="res://LabelSettings/game_label.tres" id="2_nv6xh"]
@@ -80,6 +80,30 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 
+[node name="Control7" type="Control" parent="VBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Control14" type="Control" parent="VBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Control11" type="Control" parent="VBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Control8" type="Control" parent="VBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Control4" type="Control" parent="VBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Control16" type="Control" parent="VBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/PanelContainer/HBoxContainer"]
 layout_mode = 2
 
@@ -138,7 +162,7 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Control3" type="Control" parent="VBoxContainer/PanelContainer/HBoxContainer"]
+[node name="Control10" type="Control" parent="VBoxContainer/PanelContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -155,7 +179,7 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="Node2D3" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2" instance=ExtResource("1_4ijo2")]
-position = Vector2(111, 163)
+position = Vector2(111, 148)
 scale = Vector2(4, 4)
 script = null
 
@@ -207,10 +231,117 @@ layout_mode = 2
 text = "Probabilite Blocage : X"
 label_settings = ExtResource("5_ft5t2")
 
+[node name="Label10" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+text = "Resultat combat : X"
+label_settings = ExtResource("5_ft5t2")
+
 [node name="Control4" type="Control" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 size_flags_vertical = 3
 
+[node name="Control3" type="Control" parent="VBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="VBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Control" type="Control" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Control2" type="Control" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Node2D3" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3" instance=ExtResource("1_4ijo2")]
+position = Vector2(111, 148)
+scale = Vector2(4, 4)
+script = null
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3/VBoxContainer"]
+layout_mode = 2
+text = "Vie : X"
+label_settings = ExtResource("5_ft5t2")
+
+[node name="Label2" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3/VBoxContainer"]
+layout_mode = 2
+text = "Degats : X"
+label_settings = ExtResource("5_ft5t2")
+
+[node name="Label3" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3/VBoxContainer"]
+layout_mode = 2
+text = "Magie : X"
+label_settings = ExtResource("5_ft5t2")
+
+[node name="Label4" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3/VBoxContainer"]
+layout_mode = 2
+text = "Soin : X"
+label_settings = ExtResource("5_ft5t2")
+
+[node name="Label5" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3/VBoxContainer"]
+layout_mode = 2
+text = "Vitesse : X"
+label_settings = ExtResource("5_ft5t2")
+
+[node name="Label6" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3/VBoxContainer"]
+layout_mode = 2
+text = "Probabilite degats : X"
+label_settings = ExtResource("5_ft5t2")
+
+[node name="Label7" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3/VBoxContainer"]
+layout_mode = 2
+text = "Probabilite magie : X"
+label_settings = ExtResource("5_ft5t2")
+
+[node name="Label8" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3/VBoxContainer"]
+layout_mode = 2
+text = "Probabilite vie : X"
+label_settings = ExtResource("5_ft5t2")
+
+[node name="Label9" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3/VBoxContainer"]
+layout_mode = 2
+text = "Probabilite Blocage : X"
+label_settings = ExtResource("5_ft5t2")
+
+[node name="Label10" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3/VBoxContainer"]
+layout_mode = 2
+text = "Resultat combat : X"
+label_settings = ExtResource("5_ft5t2")
+
+[node name="Control4" type="Control" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+size_flags_vertical = 3
+
 [node name="Control2" type="Control" parent="VBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Control5" type="Control" parent="VBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Control15" type="Control" parent="VBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Control12" type="Control" parent="VBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Control13" type="Control" parent="VBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Control6" type="Control" parent="VBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Control9" type="Control" parent="VBoxContainer/PanelContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
