@@ -20,13 +20,16 @@ func _init(points_: int, a: Array, b: Array) -> void:
 	points = points_
 	from_distribution(a, b)
 	
+func _to_string():
+	return "d = %d, m = %d, h = %d, s = %d, hp = %d, da = %f, ma = %f, ph = %f, ba = %f |||||" % [damage, magic, heal, speed, health, damage_attack * 100, magic_attack * 100, perform_heal * 100, block_attack * 100]
+	
 func from_distribution(a: Array, b: Array) -> void:
 	if a.reduce(func(acc, v): return acc + v, 0) != points:
-		Utils.normalize_distribution(a, points)
-		Utils.fix_int_distribution  (a, points, 1)
+		a = Utils.normalize_distribution(a, points)
+		a = Utils.fix_int_distribution  (a, points, 1)
 		
 	if not is_equal_approx(b.reduce(func(acc, v): return acc + v, 0), 1.0):
-		Utils.normalize_distribution(a, points)
+		b = Utils.normalize_distribution(b, 1.0)
 		
 	damage = a[0]
 	magic  = a[1]

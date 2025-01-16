@@ -16,6 +16,9 @@ func _init(dataVar: PlayerData) -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+	
+func _to_string():
+	return data.to_string()
 
 # Chooses the players action this turn
 # Return 0 or 1 or 2 or 3
