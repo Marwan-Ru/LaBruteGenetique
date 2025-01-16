@@ -1,33 +1,31 @@
 class_name Breeder
 
 var _mut: float
-var _lhs: PlayerData
-var _rhs: PlayerData
+var _parent: Array
 
 func _init(mutation_rate: float) -> void:
 	_mut = mutation_rate
 
-func set_source(lhs: PlayerData, rhs: PlayerData) -> void:
-	_lhs = lhs
-	_rhs = rhs
+func set_source(parent: Array) -> void:
+	_parent = parent
 
-func new_generation(n: int) -> Array[PlayerData]:
-	var players = []
-	for i in range(0, n):
-		var a = []
-		var b = []
+func new_generation(n: int) -> Array:
+	var players = _parent.duplicate()
+	for i in range(0, n - _parent.size()):
+		var a = [0, 0, 0, 0, 0]
+		var b = [0, 0, 0, 0]
 		
-		a[0] = _lhs.damage if randf() > 0.5 else _rhs.damage 
-		a[1] = _lhs.magic  if randf() > 0.5 else _rhs.magic 
-		a[2] = _lhs.heal   if randf() > 0.5 else _rhs.heal 
-		a[3] = _lhs.speed  if randf() > 0.5 else _rhs.speed 
-		a[4] = _lhs.health if randf() > 0.5 else _rhs.health
+		a[0] = (_parent.pick_random().damage) if randf() > _mut else randi_range(1, 100)
+		a[1] = (_parent.pick_random().magic)  if randf() > _mut else randi_range(1, 100)
+		a[2] = (_parent.pick_random().heal)   if randf() > _mut else randi_range(1, 100)
+		a[3] = (_parent.pick_random().speed)  if randf() > _mut else randi_range(1, 100)
+		a[4] = (_parent.pick_random().health) if randf() > _mut else randi_range(1, 100)
 		
-		b[0] = _lhs.damage_attack if randf() > 0.5 else _rhs.damage_attack 
-		b[1] = _lhs.magic_attack  if randf() > 0.5 else _rhs.magic_attack 
-		b[2] = _lhs.perform_heal  if randf() > 0.5 else _rhs.perform_heal 
-		b[3] = _lhs.block_attack  if randf() > 0.5 else _rhs.block_attack
+		b[0] = (_parent.pick_random().damage_attack) if randf() > _mut else randf_range(0, 1.0)
+		b[1] = (_parent.pick_random().magic_attack)  if randf() > _mut else randf_range(0, 1.0) 
+		b[2] = (_parent.pick_random().perform_heal)  if randf() > _mut else randf_range(0, 1.0)
+		b[3] = (_parent.pick_random().block_attack)  if randf() > _mut else randf_range(0, 1.0)
 		
-		players.append(PlayerData.new(_lhs.points, a, b))
+		players.append(PlayerData.new(_parent[0].points, a, b))
 		
 	return players
