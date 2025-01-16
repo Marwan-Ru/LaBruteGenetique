@@ -1,7 +1,5 @@
 class_name Player
 
-extends Node
-
 var data: PlayerData
 
 var blocking: bool
@@ -9,7 +7,8 @@ var hp : int
 var alive : bool
 
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
+func _init(dataVar: PlayerData) -> void:
+	data = dataVar
 	blocking = false
 	alive = true
 	hp = data.health
@@ -61,6 +60,12 @@ func take_damage(val):
 			hp = 0
 			alive = false
 	blocking = false
+
+func take_magic(val):
+	hp -= val
+	if hp <= 0:
+		hp = 0
+		alive = false
 
 func heal():
 	if(alive):
