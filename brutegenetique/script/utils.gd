@@ -21,9 +21,13 @@ static func fix_int_distribution(dist: Array, pool, min):
 			dist[i] = min
 	
 	var diff = pool - dist.reduce(func(acc, n): return acc + n, 0)
-	while true:
-		var idx = randi_range(0, dist.size() - 1)
-		if (dist[idx] + diff >= min):
-			dist[idx] += diff
-			break
+	if diff != 0:
+		while true:
+			var idx = randi_range(0, dist.size() - 1)
+			if diff > 0:
+				dist[idx] += diff
+				break
+			elif (dist[idx] + diff) >= min:
+				dist[idx] += diff
+				break
 	return dist

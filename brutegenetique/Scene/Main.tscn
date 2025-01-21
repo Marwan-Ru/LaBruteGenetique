@@ -1,18 +1,26 @@
-[gd_scene load_steps=6 format=3 uid="uid://bvgwfljstxcns"]
+[gd_scene load_steps=7 format=3 uid="uid://bvgwfljstxcns"]
 
+[ext_resource type="Script" path="res://script/game.gd" id="1_2ddaq"]
 [ext_resource type="PackedScene" uid="uid://4hnotvwirefq" path="res://Scene/Gladiator.tscn" id="1_4ijo2"]
 [ext_resource type="Theme" uid="uid://cpdl345r6nyi2" path="res://Theme/theme.tres" id="1_300jh"]
-[ext_resource type="PackedScene" uid="uid://u8ihuto8alf2" path="res://Scene/small_slime.tscn" id="2_gn5bg"]
-[ext_resource type="LabelSettings" uid="uid://h88cm3ieho0e" path="res://LabelSettings/game_label.tres" id="2_nv6xh"]
-[ext_resource type="LabelSettings" uid="uid://cdjpyiowjnjur" path="res://LabelSettings/stat.tres" id="5_ft5t2"]
+[ext_resource type="PackedScene" path="res://Scene/small_slime.tscn" id="2_gn5bg"]
+[ext_resource type="LabelSettings" path="res://LabelSettings/game_label.tres" id="2_nv6xh"]
+[ext_resource type="LabelSettings" path="res://LabelSettings/stat.tres" id="5_ft5t2"]
 
-[node name="Main" type="Control"]
+[node name="Main" type="Control" node_paths=PackedStringArray("lhs_best", "rhs_best", "n_gen", "best_score")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_2ddaq")
+lhs_best = NodePath("VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/LeftBest")
+rhs_best = NodePath("VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3/RightBest")
+n_gen = NodePath("VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer/HBoxContainer2/VBoxContainer/HBoxContainer/GenCount")
+best_score = NodePath("VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer/HBoxContainer2/VBoxContainer/HBoxContainer2/BestScore")
+population_size = 150
+mutation_rate = 0.01
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -125,9 +133,20 @@ size_flags_horizontal = 3
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer/HBoxContainer2/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer/HBoxContainer2/VBoxContainer"]
 layout_mode = 2
-text = "Generation : X"
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer/HBoxContainer2/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Generation : "
+label_settings = ExtResource("2_nv6xh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GenCount" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer/HBoxContainer2/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "X"
 label_settings = ExtResource("2_nv6xh")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -136,9 +155,20 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Label2" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer/HBoxContainer2/VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer/HBoxContainer2/VBoxContainer"]
 layout_mode = 2
-text = "Meilleur Score : X"
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer/HBoxContainer2/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Meilleur Score :"
+label_settings = ExtResource("2_nv6xh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BestScore" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer/HBoxContainer2/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "X"
 label_settings = ExtResource("2_nv6xh")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -152,10 +182,10 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="GraphEdit" type="GraphEdit" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
-scroll_offset = Vector2(-38, 0)
-zoom = 0.0
+zoom = 0.232568
 zoom_min = 0.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer"]
@@ -167,10 +197,24 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Button" type="Button" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="Button2" type="Button" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(380, 0)
 layout_mode = 2
 size_flags_horizontal = 3
-text = " Nouvelle Génération "
+theme_override_font_sizes/font_size = 70
+text = "1 GENERATION"
+
+[node name="Control6" type="Control" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(380, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 70
+text = "10 GENERATIONS"
 
 [node name="Control5" type="Control" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -202,57 +246,60 @@ position = Vector2(111, 148)
 scale = Vector2(4, 4)
 script = null
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2"]
+[node name="LeftBest" type="VBoxContainer" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(280, 0)
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/VBoxContainer"]
+[node name="Label" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/LeftBest"]
 layout_mode = 2
-text = "Vie : X"
+text = "
+"
 label_settings = ExtResource("5_ft5t2")
 
-[node name="Label2" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/VBoxContainer"]
+[node name="Label2" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/LeftBest"]
 layout_mode = 2
-text = "Degats : X"
+text = "
+"
 label_settings = ExtResource("5_ft5t2")
 
-[node name="Label3" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/VBoxContainer"]
+[node name="Label3" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/LeftBest"]
 layout_mode = 2
-text = "Magie : X"
+text = "
+"
 label_settings = ExtResource("5_ft5t2")
 
-[node name="Label4" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/VBoxContainer"]
+[node name="Label4" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/LeftBest"]
 layout_mode = 2
-text = "Soin : X"
+text = "
+"
 label_settings = ExtResource("5_ft5t2")
 
-[node name="Label5" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/VBoxContainer"]
+[node name="Label5" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/LeftBest"]
 layout_mode = 2
-text = "Vitesse : X"
+text = "
+"
 label_settings = ExtResource("5_ft5t2")
 
-[node name="Label6" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/VBoxContainer"]
+[node name="Label6" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/LeftBest"]
 layout_mode = 2
-text = "Probabilite degats : X"
+text = "
+"
 label_settings = ExtResource("5_ft5t2")
 
-[node name="Label7" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/VBoxContainer"]
+[node name="Label7" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/LeftBest"]
 layout_mode = 2
-text = "Probabilite magie : X"
 label_settings = ExtResource("5_ft5t2")
 
-[node name="Label8" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/VBoxContainer"]
+[node name="Label8" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/LeftBest"]
 layout_mode = 2
-text = "Probabilite vie : X"
 label_settings = ExtResource("5_ft5t2")
 
-[node name="Label9" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/VBoxContainer"]
+[node name="Label9" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/LeftBest"]
 layout_mode = 2
-text = "Probabilite Blocage : X"
 label_settings = ExtResource("5_ft5t2")
 
-[node name="Label10" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/VBoxContainer"]
+[node name="Label10" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2/LeftBest"]
 layout_mode = 2
-text = "Resultat combat : X"
 label_settings = ExtResource("5_ft5t2")
 
 [node name="Control4" type="Control" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer2"]
@@ -275,62 +322,63 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Node2D3" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3" instance=ExtResource("1_4ijo2")]
-position = Vector2(111, 148)
-scale = Vector2(4, 4)
-script = null
+[node name="Node2D2" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3" instance=ExtResource("2_gn5bg")]
+position = Vector2(110, 140)
+scale = Vector2(8, 8)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3"]
+[node name="RightBest" type="VBoxContainer" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3"]
+custom_minimum_size = Vector2(280, 0)
 layout_mode = 2
+size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3/VBoxContainer"]
+[node name="Label" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3/RightBest"]
 layout_mode = 2
-text = "Vie : X"
 label_settings = ExtResource("5_ft5t2")
 
-[node name="Label2" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3/VBoxContainer"]
+[node name="Label2" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3/RightBest"]
 layout_mode = 2
-text = "Degats : X"
+text = "
+"
 label_settings = ExtResource("5_ft5t2")
 
-[node name="Label3" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3/VBoxContainer"]
+[node name="Label3" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3/RightBest"]
 layout_mode = 2
-text = "Magie : X"
+text = "
+"
 label_settings = ExtResource("5_ft5t2")
 
-[node name="Label4" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3/VBoxContainer"]
+[node name="Label4" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3/RightBest"]
 layout_mode = 2
-text = "Soin : X"
+text = "
+"
 label_settings = ExtResource("5_ft5t2")
 
-[node name="Label5" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3/VBoxContainer"]
+[node name="Label5" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3/RightBest"]
 layout_mode = 2
-text = "Vitesse : X"
+text = "
+"
 label_settings = ExtResource("5_ft5t2")
 
-[node name="Label6" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3/VBoxContainer"]
+[node name="Label6" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3/RightBest"]
 layout_mode = 2
-text = "Probabilite degats : X"
+text = "
+"
 label_settings = ExtResource("5_ft5t2")
 
-[node name="Label7" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3/VBoxContainer"]
+[node name="Label7" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3/RightBest"]
 layout_mode = 2
-text = "Probabilite magie : X"
 label_settings = ExtResource("5_ft5t2")
 
-[node name="Label8" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3/VBoxContainer"]
+[node name="Label8" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3/RightBest"]
 layout_mode = 2
-text = "Probabilite vie : X"
 label_settings = ExtResource("5_ft5t2")
 
-[node name="Label9" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3/VBoxContainer"]
+[node name="Label9" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3/RightBest"]
 layout_mode = 2
-text = "Probabilite Blocage : X"
 label_settings = ExtResource("5_ft5t2")
 
-[node name="Label10" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3/VBoxContainer"]
+[node name="Label10" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3/RightBest"]
 layout_mode = 2
-text = "Resultat combat : X"
 label_settings = ExtResource("5_ft5t2")
 
 [node name="Control4" type="Control" parent="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer3"]
@@ -364,3 +412,6 @@ size_flags_horizontal = 3
 [node name="Control9" type="Control" parent="VBoxContainer/PanelContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+
+[connection signal="pressed" from="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer/HBoxContainer/Button2" to="." method="on_request_new_gen" binds= [1]]
+[connection signal="pressed" from="VBoxContainer/PanelContainer/HBoxContainer/VBoxContainer/HBoxContainer/Button" to="." method="on_request_new_gen" binds= [10]]

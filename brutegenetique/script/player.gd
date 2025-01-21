@@ -8,6 +8,9 @@ var alive : bool
 
 # Called when the node enters the scene tree for the first time.
 func _init(dataVar: PlayerData) -> void:
+	reset(dataVar)
+	
+func reset(dataVar: PlayerData) -> void:
 	data = dataVar
 	blocking = false
 	alive = true

@@ -15,11 +15,11 @@ func new_generation(n: int) -> Array:
 		var a = [0, 0, 0, 0, 0]
 		var b = [0, 0, 0, 0]
 		
-		a[0] = (_parent.pick_random().damage) if randf() > _mut else randi_range(1, 100)
-		a[1] = (_parent.pick_random().magic)  if randf() > _mut else randi_range(1, 100)
-		a[2] = (_parent.pick_random().heal)   if randf() > _mut else randi_range(1, 100)
-		a[3] = (_parent.pick_random().speed)  if randf() > _mut else randi_range(1, 100)
-		a[4] = (_parent.pick_random().health) if randf() > _mut else randi_range(1, 100)
+		a[0] = (_parent.pick_random().damage) if randf() > _mut else randi_range(1, _parent[0].points)
+		a[1] = (_parent.pick_random().magic)  if randf() > _mut else randi_range(1, _parent[0].points)
+		a[2] = (_parent.pick_random().heal)   if randf() > _mut else randi_range(1, _parent[0].points)
+		a[3] = (_parent.pick_random().speed)  if randf() > _mut else randi_range(1, _parent[0].points)
+		a[4] = (_parent.pick_random().health) if randf() > _mut else randi_range(1, _parent[0].points)
 		
 		b[0] = (_parent.pick_random().damage_attack) if randf() > _mut else randf_range(0, 1.0)
 		b[1] = (_parent.pick_random().magic_attack)  if randf() > _mut else randf_range(0, 1.0) 

@@ -26,6 +26,7 @@ func _to_string():
 func from_distribution(a: Array, b: Array) -> void:
 	if a.reduce(func(acc, v): return acc + v, 0) != points:
 		a = Utils.normalize_distribution(a, points)
+		a = a.map(func(a): return ceili(a))
 		a = Utils.fix_int_distribution  (a, points, 1)
 		
 	if not is_equal_approx(b.reduce(func(acc, v): return acc + v, 0), 1.0):

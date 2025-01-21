@@ -13,11 +13,11 @@ class Slime:
 	var blocking : bool
 	
 	func _init() -> void:
-		health = 110
+		health = 310
 		hp = health
-		attack = 30
-		magic = 20
-		speed = 20
+		attack = 50
+		magic = 25
+		speed = 30
 		blocking = false
 		
 func _init(_playerArray, size) -> void:
@@ -35,7 +35,8 @@ func simulateFight(player : Player, turnLimit: int) -> float:
 			if action == 0:
 				slime.hp -= player.data.damage
 			elif action == 1:
-				slime.hp -= int(float(player.data.magic) * 0.95)
+				#slime.hp -= int(float(player.data.magic) * 0.95)
+				slime.hp -= player.data.magic
 		else:
 			var rand = randi_range(0, 2)
 			match rand:
@@ -55,7 +56,8 @@ func simulateFight(player : Player, turnLimit: int) -> float:
 				if action == 0:
 					slime.hp -= player.data.damage
 				elif action == 1:
-					slime.hp -= int(float(player.data.magic) * 0.95)
+					#slime.hp -= int(float(player.data.magic) * 0.95)
+					slime.hp -= player.data.magic
 		else:
 			var rand = randi_range(0, 1)
 			match rand:
@@ -68,7 +70,7 @@ func simulateFight(player : Player, turnLimit: int) -> float:
 	var score : float = 0
 	if player.hp > 0 and slime.hp <= 0:
 		score += 100
-		score += 1 - float(turn) / float(turnLimit) * 5
+		score += (1 - float(turn) / float(turnLimit)) * 5
 	else :
 		if player.hp > 0:
 			score += float(turn) / float(turnLimit) 
